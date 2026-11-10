@@ -4,13 +4,13 @@
   "data": {
     "values": [
       { "year": 1990, "emissions": 22.4 },
-      { "year": 1995", "emissions": 23.1 },
-      { "year": 2000", "emissions": 25.2 },
-      { "year": 2005", "emissions": 29.7 },
-      { "year": 2010", "emissions": 33.1 },
-      { "year": 2015", "emissions": 35.6 },
-      { "year": 2020", "emissions": 34.1 },
-      { "year": 2022", "emissions": 36.8 }
+      { "year": 1995, "emissions": 23.1 },
+      { "year": 2000, "emissions": 25.2 },
+      { "year": 2005, "emissions": 29.7 },
+      { "year": 2010, "emissions": 33.1 },
+      { "year": 2015, "emissions": 35.6 },
+      { "year": 2020, "emissions": 34.1 },
+      { "year": 2022, "emissions": 36.8 }
     ]
   },
   "mark": { "type": "line", "point": true, "color": "#e74c3c" },

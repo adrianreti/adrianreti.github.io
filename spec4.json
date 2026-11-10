@@ -4,10 +4,10 @@
   "data": {
     "values": [
       { "year": 1850, "high": 0, "upper_middle": 0, "lower_middle": 0, "low": 0 },
-      { "year": 1900", "high": 45, "upper_middle": 5, "lower_middle": 2, "low": 0.5 },
-      { "year": 1950", "high": 280, "upper_middle": 35, "lower_middle": 15, "low": 3 },
-      { "year": 2000", "high": 980, "upper_middle": 210, "lower_middle": 95, "low": 18 },
-      { "year": 2022", "high": 1520, "upper_middle": 580, "lower_middle": 320, "low": 45 }
+      { "year": 1900, "high": 45, "upper_middle": 5, "lower_middle": 2, "low": 0.5 },
+      { "year": 1950, "high": 280, "upper_middle": 35, "lower_middle": 15, "low": 3 },
+      { "year": 2000, "high": 980, "upper_middle": 210, "lower_middle": 95, "low": 18 },
+      { "year": 2022, "high": 1520, "upper_middle": 580, "lower_middle": 320, "low": 45 }
     ]
   },
   "transform": [
