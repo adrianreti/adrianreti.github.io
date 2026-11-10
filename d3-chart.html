@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3.js Bar Chart Clone</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    #vis { width: 100%; }
+    .bar { fill: #3498db; transition: fill 0.2s; }
+    .bar:hover { fill: #2980b9; }
+    .axis path, .axis line { stroke: #999; stroke-width: 1; }
+    .axis text { font-size: 12px; fill: #333; }
+    .label { font-size: 13px; fill: #555; }
+  </style>
+</head>
+<body>
+  <h1>D3.js Bar Chart (Clone of Vega-Lite Spec)</h1>
+  <div id="vis"></div>
+
+  <script>
+    const data = [
+      { category: "A", value: 28 },
+      { category: "B", value: 55 },
+      { category: "C", value: 43 },
+      { category: "D", value: 91 },
+      { category: "E", value: 81 },
+      { category: "F", value: 53 },
+      { category: "G", value: 19 },
+      { category: "H", value: 87 }
+    ];
+
+    const margin = { top: 30, right: 20, bottom: 50, left: 60 };
+    const width = 600 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+
+    const svg = d3.select("#vis")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.category))
+      .range([0, width])
+      .padding(0.2);
+
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, d => d.value)])
+      .nice()
+      .range([height, 0]);
+
+    svg.append("g")
+      .attr("class", "axis")
+      .attr("transform", `translate(0,${height})`)
+      .call(d3.axisBottom(x))
+      .selectAll("text")
+      .attr("class", "label");
+
+    svg.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(8))
+      .selectAll("text")
+      .attr("class", "label");
+
+    svg.selectAll(".bar")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", d => x(d.category))
+      .attr("y", d => y(d.value))
+      .attr("width", x.bandwidth())
+      .attr("height", d => height - y(d.value));
+
+    svg.append("text")
+      .attr("class", "label")
+      .attr("text-anchor", "middle")
+      .attr("x", width / 2)
+      .attr("y", -10)
+      .text("Simple Bar Chart");
+  </script>
+</body>
+</html>
