@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Global CO₂ Emissions Trend (1990-2022)",
+  "data": {
+    "values": [
+      { "year": 1990, "emissions": 22.4 },
+      { "year": 1995", "emissions": 23.1 },
+      { "year": 2000", "emissions": 25.2 },
+      { "year": 2005", "emissions": 29.7 },
+      { "year": 2010", "emissions": 33.1 },
+      { "year": 2015", "emissions": 35.6 },
+      { "year": 2020", "emissions": 34.1 },
+      { "year": 2022", "emissions": 36.8 }
+    ]
+  },
+  "mark": { "type": "line", "point": true, "color": "#e74c3c" },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "title": "Year" },
+    "y": { "field": "emissions", "type": "quantitative", "title": "CO₂ Emissions (Gt)", "scale": { "zero": false } },
+    "tooltip": [{ "field": "year" }, { "field": "emissions", "format": ".1f" }]
+  }
+}

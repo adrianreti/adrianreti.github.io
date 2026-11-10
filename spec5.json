@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Sectoral Emissions by Region (2022, Mt CO₂)",
+  "data": {
+    "values": [
+      { "region": "China", "sector": "Power", "emissions": 5200 },
+      { "region": "China", "sector": "Industry", "emissions": 4100 },
+      { "region": "China", "sector": "Transport", "emissions": 950 },
+      { "region": "China", "sector": "Buildings", "emissions": 680 },
+      { "region": "USA", "sector": "Power", "emissions": 1550 },
+      { "region": "USA", "sector": "Industry", "emissions": 1200 },
+      { "region": "USA", "sector": "Transport", "emissions": 1800 },
+      { "region": "USA", "sector": "Buildings", "emissions": 580 },
+      { "region": "EU", "sector": "Power", "emissions": 780 },
+      { "region": "EU", "sector": "Industry", "emissions": 620 },
+      { "region": "EU", "sector": "Transport", "emissions": 920 },
+      { "region": "EU", "sector": "Buildings", "emissions": 410 },
+      { "region": "India", "sector": "Power", "emissions": 1150 },
+      { "region": "India", "sector": "Industry", "emissions": 680 },
+      { "region": "India", "sector": "Transport", "emissions": 320 },
+      { "region": "India", "sector": "Buildings", "emissions": 180 }
+    ]
+  },
+  "mark": "rect",
+  "encoding": {
+    "x": { "field": "sector", "type": "nominal", "title": null },
+    "y": { "field": "region", "type": "nominal", "title": null },
+    "color": {
+      "field": "emissions",
+      "type": "quantitative",
+      "title": "Emissions (Mt)",
+      "scale": { "scheme": "orangered" }
+    },
+    "tooltip": [{ "field": "region" }, { "field": "sector" }, { "field": "emissions", "format": ",.0f" }]
+  }
+}

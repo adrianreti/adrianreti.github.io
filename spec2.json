@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Renewable Energy Share by Region (2023)",
+  "data": {
+    "values": [
+      { "region": "Europe", "share": 44 },
+      { "region": "North America", "share": 23 },
+      { "region": "Latin America", "share": 62 },
+      { "region": "Asia Pacific", "share": 28 },
+      { "region": "Middle East", "share": 5 },
+      { "region": "Africa", "share": 22 }
+    ]
+  },
+  "mark": { "type": "bar", "color": "#27ae60" },
+  "encoding": {
+    "x": { "field": "share", "type": "quantitative", "title": "Renewable Share (%)" },
+    "y": { "field": "region", "type": "nominal", "sort": "-x", "title": null },
+    "tooltip": [{ "field": "region" }, { "field": "share", "format": ".0f" }]
+  }
+}

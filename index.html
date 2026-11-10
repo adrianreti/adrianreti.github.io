@@ -3,24 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vega-Lite Visualization</title>
+  <title>The Carbon Paradox: Why Climate Action Is Stalling Despite Clear Evidence</title>
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <style>
-    body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-    #vis { width: 50%; }
+    body { font-family: Georgia, serif; max-width: 800px; margin: 0 auto; padding: 0 1rem; line-height: 1.7; color: #2c2c2c; }
+    header { text-align: center; padding: 3rem 0 2rem; border-bottom: 3px solid #2c2c2c; margin-bottom: 2rem; }
+    h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 0.5rem; color: #1a1a1a; }
+    .subtitle { font-size: 1.2rem; color: #555; font-style: italic; }
+    .byline { margin-top: 1rem; color: #666; font-size: 0.95rem; }
+    article { font-size: 1.05rem; }
+    p { margin-bottom: 1.2rem; text-align: justify; }
+    .vis-container { margin: 2.5rem 0; text-align: center; }
+    .vis-container > div { width: 100%; max-width: 600px; margin: 0 auto; }
+    .vis-caption { margin-top: 0.75rem; font-size: 0.85rem; color: #555; font-style: italic; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .drop-cap::first-letter { float: left; font-size: 3.5rem; line-height: 1; padding-right: 0.1rem; color: #1a1a1a; font-weight: bold; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 3rem 0; }
+    footer { text-align: center; padding: 2rem 0; color: #777; font-size: 0.85rem; border-top: 1px solid #ddd; }
   </style>
 </head>
 <body>
-  <h1>Vega-Lite Visualization</h1>
-  <div id="vis"></div>
+  <header>
+    <h1>The Carbon Paradox</h1>
+    <p class="subtitle">Why Climate Action Is Stalling Despite Clear Evidence</p>
+    <p class="byline">By Adrian Reti | Data Visualization by Vega-Lite</p>
+  </header>
 
-<script>
-    fetch("spec.json")
-      .then(res => res.json())
-      .then(spec => vegaEmbed("#vis", spec, { actions: true }))
-      .catch(console.error);
+  <article>
+    <p class="drop-cap">Thirty years ago, the world's nations gathered in Rio de Janeiro and agreed on a simple premise: human activity was warming the planet, and we had the power to stop it. The United Nations Framework Convention on Climate Change was born from that optimism. Today, global CO₂ emissions are 64% higher than they were in 1992.</p>
+
+    <p>The data tells a story that policy has failed to answer. Since the first Conference of Parties in 1995, annual emissions have climbed from 23.1 to 36.8 gigatons—a relentless upward march interrupted only by global financial crises and a pandemic. Each dip was temporary; each recovery brought emissions roaring back.</p>
+
+    <div class="vis-container">
+      <div id="vis1"></div>
+      <p class="vis-caption">Figure 1: Global CO₂ emissions have risen 64% since 1990, with only brief pauses during economic crises.</p>
+    </div>
+
+    <p>But aggregate numbers mask a deeper inequality. The cumulative emissions chart reveals the true architecture of the crisis: high-income nations, representing roughly 16% of the world's population, have contributed nearly 60% of all historical emissions since 1850. The Global South, often lectured on climate responsibility, bears the smallest historical footprint yet faces the harshest consequences.</p>
+
+    <div class="vis-container">
+      <div id="vis2"></div>
+      <p class="vis-caption">Figure 2: High-income countries account for the vast majority of cumulative emissions since the industrial revolution.</p>
+    </div>
+
+    <p>This historical debt complicates every negotiation. When developing nations are asked to forego the fossil-fueled growth that built Western prosperity, the request rings hollow without massive technology transfer and finance. The $100 billion annual climate finance pledge—first made in 2009—has still not been fully met.</p>
+
+    <p>Yet the energy transition is underway, unevenly. Renewable electricity now exceeds 40% in Europe and Latin America, driven by hydro, wind, and plummeting solar costs. But in Asia, where energy demand is growing fastest, renewables sit at 28%. The Middle East, awash in solar potential, generates just 5% from clean sources. The technology exists; the deployment follows capital, not need.</p>
+
+    <div class="vis-container">
+      <div id="vis3"></div>
+      <p class="vis-caption">Figure 3: Renewable energy penetration varies dramatically by region, with Latin America and Europe leading.</p>
+    </div>
+
+    <p>The relationship between wealth and emissions further exposes the paradox. Plotting GDP per capita against CO₂ per capita reveals a scattered cloud, not a clean line. The United States and Australia emit nearly three times more per person than the UK or France at similar income levels. China now exceeds the EU in per-capita emissions despite a fraction of the GDP. Policy choices, not prosperity alone, determine carbon intensity.</p>
+
+    <div class="vis-container">
+      <div id="vis4"></div>
+      <p class="vis-caption">Figure 4: At similar income levels, countries make vastly different emissions choices—policy matters more than GDP.</p>
+    </div>
+
+    <p>Zoom in to the sectoral level and the decarbonization challenge sharpens. Power generation dominates in China and India, where coal fleets are young and growing. In the US and EU, transport and buildings have become the stubborn remainder—sectors where electrification meets behavioral inertia and infrastructure lock-in. No single policy lever solves all four sectors across all major economies.</p>
+
+    <div class="vis-container">
+      <div id="vis5"></div>
+      <p class="vis-caption">Figure 5: Emission profiles differ by region—power in Asia, transport in America, a mixed challenge in Europe.</p>
+    </div>
+
+    <p>The op-ed pages are full of declarations that we have the solutions. We do. Solar and wind are now the cheapest new electricity in history. Batteries have dropped 90% in cost since 2010. Heat pumps outsell gas furnaces in Europe. Electric vehicles passed 18% of global new car sales in 2023.</p>
+
+    <p>But deployment at climate-relevant speed requires something markets alone cannot deliver: coordination. Carbon pricing that reflects true social cost. Grid infrastructure built ahead of demand. Industrial policy that directs capital to hard-to-abate sectors. International finance that de-risks clean energy in the Global South. None of this happens automatically.</p>
+
+    <p>The next decade will not be decided by scientific breakthroughs. The physics was settled in the 19th century. It will be decided by whether political systems can overcome the concentrated interests that profit from the status quo, and whether wealthy nations finally treat climate finance as obligation rather than charity.</p>
+
+    <p>The data is unambiguous. The question is whether we will act on it.</p>
+  </article>
+
+  <hr>
+
+  <footer>
+    <p>Data sources: Global Carbon Project, IEA, World Bank, Our World in Data. Visualizations built with Vega-Lite.</p>
+  </footer>
+
+  <script>
+    const specs = [
+      { id: "vis1", file: "spec1.json" },
+      { id: "vis2", file: "spec4.json" },
+      { id: "vis3", file: "spec2.json" },
+      { id: "vis4", file: "spec3.json" },
+      { id: "vis5", file: "spec5.json" }
+    ];
+
+    specs.forEach(({ id, file }) => {
+      fetch(file)
+        .then(res => res.json())
+        .then(spec => vegaEmbed(`#${id}`, spec, { actions: true, theme: "excel" }))
+        .catch(err => console.error(`Failed to load ${file}:`, err));
+    });
   </script>
 </body>
 </html>

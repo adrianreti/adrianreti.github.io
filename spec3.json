@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "GDP per Capita vs CO₂ per Capita (2022)",
+  "data": {
+    "values": [
+      { "country": "USA", "gdp": 76330, "co2": 14.9 },
+      { "country": "China", "gdp": 12720, "co2": 8.0 },
+      { "country": "Germany", "gdp": 48720, "co2": 7.9 },
+      { "country": "India", "gdp": 2390, "co2": 1.9 },
+      { "country": "Brazil", "gdp": 8920, "co2": 2.3 },
+      { "country": "Japan", "gdp": 34020, "co2": 8.5 },
+      { "country": "UK", "gdp": 46130, "co2": 5.2 },
+      { "country": "Canada", "gdp": 54970, "co2": 14.2 },
+      { "country": "Australia", "gdp": 64960, "co2": 15.1 },
+      { "country": "France", "gdp": 40960, "co2": 4.5 }
+    ]
+  },
+  "mark": { "type": "circle", "size": 120, "opacity": 0.7, "color": "#3498db" },
+  "encoding": {
+    "x": { "field": "gdp", "type": "quantitative", "title": "GDP per Capita (USD)", "scale": { "type": "log" } },
+    "y": { "field": "co2", "type": "quantitative", "title": "CO₂ per Capita (tons)" },
+    "tooltip": [{ "field": "country" }, { "field": "gdp", "format": "$,.0f" }, { "field": "co2", "format": ".1f" }]
+  }
+}

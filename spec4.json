@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Cumulative CO₂ Emissions by Income Group (1850-2022)",
+  "data": {
+    "values": [
+      { "year": 1850, "high": 0, "upper_middle": 0, "lower_middle": 0, "low": 0 },
+      { "year": 1900", "high": 45, "upper_middle": 5, "lower_middle": 2, "low": 0.5 },
+      { "year": 1950", "high": 280, "upper_middle": 35, "lower_middle": 15, "low": 3 },
+      { "year": 2000", "high": 980, "upper_middle": 210, "lower_middle": 95, "low": 18 },
+      { "year": 2022", "high": 1520, "upper_middle": 580, "lower_middle": 320, "low": 45 }
+    ]
+  },
+  "transform": [
+    { "fold": ["high", "upper_middle", "lower_middle", "low"], "as": ["group", "emissions"] }
+  ],
+  "mark": { "type": "area", "opacity": 0.7 },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "title": "Year" },
+    "y": { "field": "emissions", "type": "quantitative", "title": "Cumulative Emissions (Gt)", "stack": "zero" },
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "title": "Income Group",
+      "scale": {
+        "domain": ["high", "upper_middle", "lower_middle", "low"],
+        "range": ["#e74c3c", "#f39c12", "#f1c40f", "#27ae60"]
+      },
+      "legend": { "labelExpr": "{'high': 'High Income', 'upper_middle': 'Upper Middle', 'lower_middle': 'Lower Middle', 'low': 'Low Income'}[datum.value]" }
+    },
+    "tooltip": [{ "field": "year" }, { "field": "group" }, { "field": "emissions", "format": ".0f" }]
+  }
+}
