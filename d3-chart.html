@@ -8,9 +8,9 @@
   <style>
     body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
     #vis { width: 100%; }
-    .bar { fill: #3498db; stroke: #e74c3c; stroke-width: 3; }
+    .bar { fill: #3498db; }
     .bar:hover { fill: #2980b9; }
-    .bar.blink { animation: blink 0.5s infinite; }
+    .bar.blink { stroke: #e74c3c; stroke-width: 3; animation: blink 0.5s infinite; }
     @keyframes blink {
       0%, 100% { stroke-opacity: 1; }
       50% { stroke-opacity: 0; }
